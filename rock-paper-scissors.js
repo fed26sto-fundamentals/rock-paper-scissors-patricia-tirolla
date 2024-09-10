@@ -23,7 +23,7 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-// conditions
+// play round function
 function playRound(humanChoice, computerChoice) {
     if (computerChoice == "rock" && humanChoice == "paper") {
         humanScore = humanScore + 1;
@@ -41,5 +41,15 @@ function playRound(humanChoice, computerChoice) {
         console.log("You lose!");
     }
 }
-playRound(getHumanChoice(), getComputerChoice());
 
+// play 5 times - loop
+while (humanScore + computerScore < 5) {
+    playRound(getHumanChoice(), getComputerChoice());
+}
+
+// winner
+if (humanScore > computerScore) {
+    console.log("Congratulations! You're the winner!")
+} else {
+    console.log("Try again, loser!")
+}
